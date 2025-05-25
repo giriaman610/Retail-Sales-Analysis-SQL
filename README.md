@@ -18,7 +18,7 @@ This project is designed to demonstrate SQL skills and techniques typically used
 
 ### 1. Database Setup
 
-- **Database Creation**: The project starts by creating a database named `p1_retail_db`.
+- **Database Creation**: The project starts by creating a database named `SQL Retail Sales Analysis`.
 - **Table Creation**: A table named `retail_sales` is created to store the sales data. The table structure includes columns for transaction ID, sale date, sale time, customer ID, gender, age, product category, quantity sold, price per unit, cost of goods sold (COGS), and total sale amount.
 
 ```sql
@@ -115,9 +115,9 @@ order by 1
 8. **write a query to calculate avg sale for each month, find out best selling month in each year**:
 ```sql
 with output_as as(
-  select  extract(year from sale_date) as year_here,extract(month from sale_date) as month_here, 
-  avg(total_sale) as avg_sale,
-  Row_number() over(partition by  extract(year from sale_date)  order by avg(total_sale)desc) as row_num
+select  extract(year from sale_date) as year_here,extract(month from sale_date) as month_here,
+avg(total_sale) as avg_sale,
+Row_number() over(partition by  extract(year from sale_date)  order by avg(total_sale)desc) as row_num
   from retail_sales
   group by 1,2
   order by 1,avg_sale desc
