@@ -67,7 +67,7 @@ is null or total_sale  is null
 
 The following SQL queries were developed to answer specific business questions:
 
-1. **How many unique customers **:
+1. **How many unique customers**:
 ```sql
 SELECT *
 FROM retail_sales
